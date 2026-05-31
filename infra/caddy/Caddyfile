@@ -1,0 +1,31 @@
+# Shared edge router for vhtm-eu.
+#
+# TLS is terminated upstream by exe.dev. This Caddy listens on plain HTTP :8080
+# and host-routes to per-app containers on 127.0.0.1:30NN.
+#
+# Each app ships its own routing fragment at apps/<app>/deploy/caddy.snippet
+# in its own repo. CI writes the file to disk; this Caddyfile globs them in.
+#
+# Edit this file via the vhtm.eu repo. After editing:
+#   sudo caddy fmt --overwrite /etc/caddy/Caddyfile
+#   sudo caddy validate --config /etc/caddy/Caddyfile
+#   sudo systemctl reload caddy
+
+{
+	auto_https off
+}
+
+:8080 {
+	import /home/exedev/apps/*/deploy/caddy.snippet
+
+	# Transitional: push has not yet been migrated to its own fragment.
+	# Remove this block once apps/push/deploy/caddy.snippet ships.
+	@push host push.vhtm.eu
+	handle @push {
+		reverse_proxy 127.0.0.1:3001
+	}
+
+	handle {
+		respond "No app configured for this host" 404
+	}
+}
