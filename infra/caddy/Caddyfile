@@ -18,13 +18,6 @@
 :8080 {
 	import /home/exedev/apps/*/deploy/caddy.snippet
 
-	# Transitional: push has not yet been migrated to its own fragment.
-	# Remove this block once apps/push/deploy/caddy.snippet ships.
-	@push host push.vhtm.eu
-	handle @push {
-		reverse_proxy 127.0.0.1:3001
-	}
-
 	handle {
 		respond "No app configured for this host" 404
 	}
