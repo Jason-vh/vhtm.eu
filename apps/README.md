@@ -7,6 +7,7 @@ The "next free port" is one above the highest number in the Port column.
 |---------|---------------------|---------:|-----------------------------------|-----------------------------------|
 | push    | `push.vhtm.eu`      | `3001`   | `github.com/Jason-vh/push`        | `gh-actions-runner-push.service`    |
 | recipes | `recipes.vhtm.eu`   | `3002`   | `github.com/Jason-vh/recipes`     | `gh-actions-runner-recipes.service` |
+| kyle    | `kyle.vhtm.eu`      | `3003`   | `github.com/Jason-vh/kyle`        | `gh-actions-runner-kyle.service`    |
 
 ## Conventions
 
