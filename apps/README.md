@@ -11,6 +11,7 @@ The "next free port" is one above the highest number in the Port column.
 | ernest  | `ernest.vhtm.eu`                      | `3004`   | `github.com/Jason-vh/ernest`      | `gh-actions-runner-ernest.service`  |
 | travels | `*.travels.vhtm.eu` (per-subdomain)   | `3006`   | `github.com/Jason-vh/travels`     | `gh-actions-runner-travels.service` |
 | trevor  | `trevor.vhtm.eu`                      | `3007`   | `github.com/Jason-vh/trevor`      | `gh-actions-runner-trevor.service`  |
+| mcp     | `ynab.mcp.vhtm.eu`                    | `3008`   | `github.com/Jason-vh/mcp`         | `gh-actions-runner-mcp.service`     |
 
 ## Conventions
 
