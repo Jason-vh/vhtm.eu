@@ -12,6 +12,7 @@ The "next free port" is one above the highest number in the Port column.
 | travels | `*.travels.vhtm.eu` (per-subdomain)   | `3006`   | `github.com/Jason-vh/travels`     | `gh-actions-runner-travels.service` |
 | trevor  | `trevor.vhtm.eu`                      | `3007`   | `github.com/Jason-vh/trevor`      | `gh-actions-runner-trevor.service`  |
 | mcp     | `ynab.mcp.vhtm.eu`                    | `3008`   | `github.com/Jason-vh/mcp`         | `gh-actions-runner-mcp.service`     |
+| bill    | `bill.vhtm.eu`                        | `3009`   | `github.com/Jason-vh/mcp`         | `gh-actions-runner-mcp.service`     |
 
 ## Conventions
 
@@ -27,5 +28,8 @@ The "next free port" is one above the highest number in the Port column.
   wildcard matcher in their snippet but still need one explicit Porkbun
   CNAME + one `domain add` per subdomain.
 - Runner service name is always `gh-actions-runner-<repo>.service`.
+- `bill` is a second Docker service co-located in the `mcp` repo (read-only
+  joint-budget site). It shares that repo's runner and deploy workflow, so one
+  push deploys both `ynab.mcp.vhtm.eu` and `bill.vhtm.eu`.
 
 For the full add/remove workflow see the root [`README.md`](../README.md).
