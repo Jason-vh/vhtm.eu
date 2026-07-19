@@ -11,7 +11,7 @@ The "next free port" is one above the highest number in the Port column.
 | ernest  | `ernest.vhtm.eu`                      | `3004`   | `github.com/Jason-vh/ernest`      | `gh-actions-runner-ernest.service`  |
 | travels | `*.travels.vhtm.eu` (per-subdomain)   | `3006`   | `github.com/Jason-vh/travels`     | `gh-actions-runner-travels.service` |
 | trevor  | `trevor.vhtm.eu`                      | `3007`   | `github.com/Jason-vh/trevor`      | `gh-actions-runner-trevor.service`  |
-| mcp     | `ynab.mcp.vhtm.eu`                    | `3008`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
+| mcp     | `bill.vhtm.eu/mcp`                    | `3008`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
 | bill    | `bill.vhtm.eu`                        | `3009`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
 
 ## Conventions
@@ -28,9 +28,11 @@ The "next free port" is one above the highest number in the Port column.
   wildcard matcher in their snippet but still need one explicit Porkbun
   CNAME + one `domain add` per subdomain.
 - Runner service name is always `gh-actions-runner-<repo>.service`.
-- The `bill` repo hosts two Docker services: its read-only joint-budget site
-  (`bill.vhtm.eu`) and the YNAB MCP server (`ynab.mcp.vhtm.eu`, the `mcp` row
-  above). They share one runner and deploy workflow, so one push deploys both.
-  (The repo was formerly named `mcp`.)
+- The `bill` repo hosts two Docker services on one host: the read-only
+  joint-budget site (`bill.vhtm.eu`, port 3009) and the YNAB MCP server
+  (`bill.vhtm.eu/mcp`, port 3008). Caddy path-routes `/mcp` + `/oauth` +
+  `/.well-known/oauth-*` to 3008 and everything else to 3009. They share one
+  runner and deploy workflow, so one push deploys both. (The repo was formerly
+  named `mcp`; the MCP server formerly had its own host `ynab.mcp.vhtm.eu`.)
 
 For the full add/remove workflow see the root [`README.md`](../README.md).
