@@ -13,6 +13,7 @@ The "next free port" is one above the highest number in the Port column.
 | trevor  | `trevor.vhtm.eu`                      | `3007`   | `github.com/Jason-vh/trevor`      | `gh-actions-runner-trevor.service`  |
 | mcp     | `bill.vhtm.eu/mcp`                    | `3008`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
 | bill    | `bill.vhtm.eu`                        | `3009`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
+| cookd   | `cookd.vhtm.eu`                       | `3010`   | `github.com/Jason-vh/cookd`       | `gh-actions-runner-cookd.service`   |
 
 ## Conventions
 
@@ -28,6 +29,10 @@ The "next free port" is one above the highest number in the Port column.
   wildcard matcher in their snippet but still need one explicit Porkbun
   CNAME + one `domain add` per subdomain.
 - Runner service name is always `gh-actions-runner-<repo>.service`.
+- `cookd` is the only app with **no database**. Its entire persistent state is
+  one small JSON file per kitchen, in the `cookd_cookd-saves` Docker volume.
+  It also holds long-lived **WebSocket** connections, which Caddy's
+  `reverse_proxy` upgrades transparently — no special routing.
 - The `bill` repo hosts two Docker services on one host: the read-only
   joint-budget site (`bill.vhtm.eu`, port 3009) and the YNAB MCP server
   (`bill.vhtm.eu/mcp`, port 3008). Caddy path-routes `/mcp` + `/oauth` +
