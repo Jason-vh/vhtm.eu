@@ -40,4 +40,12 @@ The "next free port" is one above the highest number in the Port column.
   runner and deploy workflow, so one push deploys both. (The repo was formerly
   named `mcp`; the MCP server formerly had its own host `ynab.mcp.vhtm.eu`.)
 
+## Not on this box
+
+- `cookd.vhtm.eu` is a vhtm.eu hostname but is **not** served from here. It
+  moved to its own exe.dev VM (`cookd`, Frankfurt) in July 2026: it is the one
+  app where a round trip to Los Angeles is felt rather than measured. Its DNS is
+  `cookd.vhtm.eu CNAME cookd.exe.xyz`, it has no Caddy snippet and no runner
+  here, and its runbook lives in its own repo. Port `3010` is free again.
+
 For the full add/remove workflow see the root [`README.md`](../README.md).
