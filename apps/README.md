@@ -13,6 +13,7 @@ The "next free port" is one above the highest number in the Port column.
 | trevor  | `trevor.vhtm.eu`                      | `3007`   | `github.com/Jason-vh/trevor`      | `gh-actions-runner-trevor.service`  |
 | mcp     | `bill.vhtm.eu/mcp`                    | `3008`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
 | bill    | `bill.vhtm.eu`                        | `3009`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
+| zeus    | `zeus.vhtm.eu`                        | `3010`   | `github.com/Jason-vh/zeus`        | `gh-actions-runner-zeus.service`    |
 
 ## Conventions
 
@@ -41,6 +42,6 @@ The "next free port" is one above the highest number in the Port column.
   moved to its own exe.dev VM (`cookd`, Frankfurt) in July 2026: it is the one
   app where a round trip to Los Angeles is felt rather than measured. Its DNS is
   `cookd.vhtm.eu CNAME cookd.exe.xyz`, it has no Caddy snippet and no runner
-  here, and its runbook lives in its own repo. Port `3010` is free again.
+  here, and its runbook lives in its own repo.
 
 For the full add/remove workflow see the root [`README.md`](../README.md).
