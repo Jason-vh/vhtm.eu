@@ -13,7 +13,7 @@ The "next free port" is one above the highest number in the Port column.
 | trevor  | `trevor.vhtm.eu`                      | `3007`   | `github.com/Jason-vh/trevor`      | `gh-actions-runner-trevor.service`  |
 | mcp     | `bill.vhtm.eu/mcp`                    | `3008`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
 | bill    | `bill.vhtm.eu`                        | `3009`   | `github.com/Jason-vh/bill`        | `gh-actions-runner-bill.service`    |
-| zeus    | `zeus.vhtm.eu`                        | `3010`   | `github.com/Jason-vh/zeus`        | `gh-actions-runner-zeus.service`    |
+| oikos   | `oikos.vhtm.eu`                       | `3010`   | `github.com/Jason-vh/oikos`       | `gh-actions-runner-oikos.service`   |
 
 ## Conventions
 
